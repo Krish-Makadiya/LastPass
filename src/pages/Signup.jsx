@@ -68,7 +68,7 @@ const Signup = () => {
                 <Loader/>
             ) : (
                 <div
-                    className={`h-[89vh] w-[30%] mx-auto flex flex-col justify-center gap-6`}>
+                    className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center gap-6`}>
                     <h1
                         className={`text-[36px] font-[600] ${
                             darkMode ? "text-white" : "text-black"

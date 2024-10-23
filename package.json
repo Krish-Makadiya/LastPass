@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "cd backend && npm run dev",
-    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
+    "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start -- --host\" \"npm run server\""
   },
   "dependencies": {
     "@lordicon/react": "^1.10.0",

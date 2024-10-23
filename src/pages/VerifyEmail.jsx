@@ -48,13 +48,13 @@ const VerifyEmail = () => {
             {loading ? (
                 <Loader />
             ) : (
-                <div className="flex h-[80vh] flex-col justify-center w-[25%] mx-auto  gap-5">
+                <div className="flex h-[80vh] flex-col justify-center lg:w-[25%] w-[80%] mx-auto  gap-5">
                     <div className="flex flex-col">
                         <p className="text-[28px] font-[600] text-[#00ED64]">
                             Verify Email
                         </p>
                         <p>
-                            Boost your security with a fresh, strong password!
+                            Boost your security with a fresh, <br /> strong password!
                         </p>
                     </div>
                     <form
@@ -67,8 +67,8 @@ const VerifyEmail = () => {
                                 id="email"
                                 onChange={handleChange}
                                 placeholder="Enter Email Address"
-                                className={`text-black px-3 py-[6px] rounded-md text-[16px] border-4 ${
-                                    darkMode ? "" : "border-[#00ED64]"
+                                className={`text-black bg-gray-100 w-full px-3 py-[6px] rounded-md text-[16px] border-[3px] ${
+                                    !darkMode && "border-gray-300"
                                 }`}
                                 value={email}
                             />

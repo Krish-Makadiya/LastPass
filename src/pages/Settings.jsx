@@ -68,14 +68,14 @@ const Settings = () => {
         <Loader />
     ) : (
         <div
-            className={`w-full min-h-[89%] ${
+            className={`w-full min-h-[89%] lg:pb-10 pb-6 ${
                 darkMode ? "bg-[#001E2B]" : "bg-[#FFFFFF]"
             }`}>
-            <div className="flex  w-[60%] mx-auto flex-col gap-5">
+            <div className="flex  lg:w-[60%] w-[90%] mx-auto flex-col gap-5">
                 <h1 className="text-[30px] font-[600] pt-6">Settings</h1>
 
                 <div
-                    className={`px-6 py-8 flex justify-between items-center w-full rounded-[10px] border-[2px] gap-8 ${
+                    className={`lg:px-6 lg:py-8 px-4 py-6 flex lg:flex-row flex-col justify-between items-center w-full rounded-[10px] border-[2px] gap-8 ${
                         darkMode ? "border-slate-700" : "border-slate-300"
                     }`}>
                     <img
@@ -84,11 +84,11 @@ const Settings = () => {
                         className="rounded-[50%] h-36"
                     />
 
-                    <div className="flex flex-col w-[80%] gap-4">
+                    <div className="flex flex-col lg:w-[80%] w-[95%] gap-4">
                         <div className="flex justify-between w-full">
                             <div className="flex flex-col gap-[2px] w-[48%]">
                                 <p className="font-[600] px-1">First Name</p>
-                                <p className="bg-gray-100 px-3 py-[6px] rounded-md border-2 border-gray-300 text-black">
+                                <p className="bg-gray-100 px-3 py-[6px]  rounded-md border-2 border-gray-300 text-black">
                                     {user.firstName}
                                 </p>
                             </div>
@@ -109,10 +109,10 @@ const Settings = () => {
                 </div>
 
                 <div
-                    className={`flex justify-between w-full px-6 py-8 items-center rounded-[10px] border-[2px] ${
+                    className={`flex lg:flex-row flex-col justify-between w-full lg:px-6 px-4 lg:py-8 py-6 items-center rounded-[10px] border-[2px] lg:gap-0 gap-4 ${
                         darkMode ? "border-slate-700" : "border-slate-300"
                     }`}>
-                    <div className="w-[50%] flex flex-col gap-3">
+                    <div className="lg:w-[50%] w-[95%] flex flex-col lg:gap-2 gap-3">
                         <p className="text-[20px] font-[600] text-[#00ED64]">
                             Forgot Password
                         </p>
@@ -122,18 +122,18 @@ const Settings = () => {
                         </p>
                     </div>
                     <div
-                        className="bg-[#00ED64] px-3 py-2 rounded-md font-[600] flex items-center justify-center gap-2 transition-all duration-200 hover:scale-95 mt-1 text-black"
+                        className="bg-[#00ED64] lg:px-3 px-2 py-2 rounded-md font-[600] flex items-center justify-center lg:gap-2 gap-1 transition-all duration-200 hover:scale-95 mt-1 text-black"
                         onClick={forgotPasswordHandler}>
-                        <MdEdit size={24} />
+                        <MdEdit className="text-[20px] lg:text-[30px]" />
                         <p className="text-[14px]">Forgot Password</p>
                     </div>
                 </div>
 
                 <div
-                    className={`flex justify-between w-full px-6 py-8 items-center rounded-[10px] border-[2px] mb-10 ${
+                    className={`flex lg:flex-row flex-col justify-between w-full lg:px-6 px-4 lg:py-8 py-6 items-center rounded-[10px] border-[2px] lg:gap-0 gap-4 ${
                         darkMode ? "border-slate-700" : "border-slate-300"
                     }`}>
-                    <div className="w-[50%] flex flex-col gap-3">
+                    <div className="lg:w-[50%] w-[95%] flex flex-col lg:gap-2 gap-3">
                         <p className="text-[20px] font-[600] text-[#00ED64]">
                             Delete Account
                         </p>
@@ -143,9 +143,9 @@ const Settings = () => {
                         </p>
                     </div>
                     <div
-                        className="bg-[#00ED64] px-3 py-2 rounded-md font-[600] flex items-center justify-center gap-2 transition-all duration-200 hover:scale-95 mt-1 text-black"
+                        className="bg-[#00ED64] lg:px-3 px-2 py-2 rounded-md font-[600] flex items-center justify-center lg:gap-2 gap-1 transition-all duration-200 hover:scale-95 mt-1 text-black"
                         onClick={deleteAccountHandler}>
-                        <MdDelete size={24} />
+                        <MdDelete className="text-[20px] lg:text-[30px]" />
                         <p className="text-[14px]">Delete Account</p>
                     </div>
                 </div>

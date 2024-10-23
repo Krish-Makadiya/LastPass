@@ -82,7 +82,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
     };
 
     return (
-        <div className="w-[60%] mx-auto pb-12 text-black">
+        <div className="lg:w-[60%] w-[90%] mx-auto lg:pb-12 pb-4 text-black">
             <h2
                 className={`${
                     darkMode ? "text-white" : "text-black"
@@ -113,7 +113,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
                             <MdEdit
                                 size={24}
                                 onClick={() => editHandler(password)}
-                            />e
+                            />
                             <MdDelete
                                 size={24}
                                 onClick={() => deleteHandler(password)}
@@ -127,15 +127,13 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
                                 value={password.linkUrl}
                                 className="w-[90%] outline-none"
                                 readOnly
-                            />
-                            <button
                                 onClick={() => {
                                     navigator.clipboard.writeText(
                                         password.linkUrl
                                     );
-                                }}>
-                                <IoCopy onClick={toasthandler} />
-                            </button>
+                                    toasthandler();
+                                }}
+                            />
                         </div>
                         <div className="flex items-center w-[40%] justify-between  border-[1px] border-gray-400 p-1 px-2 rounded-md">
                             <input
@@ -143,15 +141,13 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
                                 value={password.username}
                                 className="w-[90%] outline-none"
                                 readOnly
-                            />
-                            <button
-                                onClick={() =>
+                                onClick={() => {
                                     navigator.clipboard.writeText(
-                                        password.username
-                                    )
-                                }>
-                                <IoCopy onClick={toasthandler} />
-                            </button>
+                                        password.linkUrl
+                                    );
+                                    toasthandler();
+                                }}
+                            />
                         </div>
                         <div className="flex items-center w-[30%] justify-between  border-[1px] border-gray-400 p-1 px-2 rounded-md">
                             <input
@@ -159,15 +155,13 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
                                 value={password.password}
                                 className="w-[90%] outline-none"
                                 readOnly
-                            />
-                            <button
-                                onClick={() =>
+                                onClick={() => {
                                     navigator.clipboard.writeText(
-                                        password.password
-                                    )
-                                }>
-                                <IoCopy onClick={toasthandler} />
-                            </button>
+                                        password.linkUrl
+                                    );
+                                    toasthandler();
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
