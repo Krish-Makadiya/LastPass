@@ -54,7 +54,7 @@ const Navbar = () => {
                         </button>
                         <button className="bg-[#00ED64] lg:px-3 lg:py-2 px-2 py-1 rounded-md  transition-all duration-200 hover:scale-95">
                             <a
-                                href="https://github.com/Krish-Makadiya?tab=repositories"
+                                href="https://github.com/Krish-Makadiya/LastPass"
                                 className="flex items-center gap-2">
                                 <IoLogoGithub
                                     className="lg:size-[30px] size-[25px]"
