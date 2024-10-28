@@ -79,7 +79,9 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
     return (
         <div className="lg:w-[60%] w-[90%] mx-auto lg:pb-12 pb-4 text-black">
             <h2
-                className={` lg:text-3xl text-2xl font-semibold mb-6`}>
+                className={`${
+                    darkMode ? "text-white" : "text-black"
+                } lg:text-3xl text-2xl font-semibold mb-6`}>
                 Your Passwords
             </h2>
 
