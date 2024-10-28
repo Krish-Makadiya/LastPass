@@ -54,6 +54,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
             (password) => password._id !== passwordToDelete._id
         );
         setAllPasswords(updatedPasswords);
+        setDeletePasswordDialog(!deletePasswordDialog);
 
         try {
             const response = await axios.delete(DELETE_PASSWORD_API, {
@@ -68,7 +69,6 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
             if (!response.data.success) {
                 throw new Error(response.data.message);
             }
-            setDeletePasswordDialog(!deletePasswordDialog);
             setPassToDelete({});
             toast.success(response.data.message);
         } catch (error) {
