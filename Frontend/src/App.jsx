@@ -33,7 +33,7 @@ function App() {
     return (
         <div
             className={`${
-                darkMode ? "bg-[#001E2B] text-white" : "bg-[#F8F8FF] text-black"
+                darkMode ? "bg-[#001E2B] text-white" : "bg-white text-black"
             } h-[100vh] font-[poppins]`}>
             <Navbar />
 

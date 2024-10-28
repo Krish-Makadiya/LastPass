@@ -85,7 +85,9 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
 
             {passwords.length === 0 && (
                 <div
-                    className={``}>
+                    className={`text-center ${
+                        darkMode ? "text-white" : "text-black"
+                    }`}>
                     No passwords saved yet.
                 </div>
             )}
@@ -93,7 +95,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
             {passwords.map((password, idx) => (
                 <div
                     key={idx}
-                    className={`flex flex-col px-5 py-4 rounded-md gap-3 mb-4 ${
+                    className={`flex flex-col bg-white px-5 py-4 rounded-md gap-3 mb-4 ${
                         !darkMode && "border-[1px] border-gray-400"
                     }`}>
                     <div className="flex justify-between">
