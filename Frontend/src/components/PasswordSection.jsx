@@ -79,17 +79,13 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
     return (
         <div className="lg:w-[60%] w-[90%] mx-auto lg:pb-12 pb-4 text-black">
             <h2
-                className={`${
-                    darkMode ? "text-white" : "text-black"
-                } lg:text-3xl text-2xl font-semibold mb-6`}>
+                className={` lg:text-3xl text-2xl font-semibold mb-6`}>
                 Your Passwords
             </h2>
 
             {passwords.length === 0 && (
                 <div
-                    className={`text-center ${
-                        darkMode ? "text-white" : "text-black"
-                    }`}>
+                    className={``}>
                     No passwords saved yet.
                 </div>
             )}
@@ -97,7 +93,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
             {passwords.map((password, idx) => (
                 <div
                     key={idx}
-                    className={`flex flex-col bg-white px-5 py-4 rounded-md gap-3 mb-4 ${
+                    className={`flex flex-col px-5 py-4 rounded-md gap-3 mb-4 ${
                         !darkMode && "border-[1px] border-gray-400"
                     }`}>
                     <div className="flex justify-between">
