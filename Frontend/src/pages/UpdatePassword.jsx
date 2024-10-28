@@ -63,7 +63,7 @@ const UpdatePassword = () => {
     ) : passwordUpdated ? (
         <Done />
     ) : (
-        <div className={`${darkMode ? "text-white" : "text-black"} w-screen`}>
+        <div className={`w-screen`}>
             <div className="flex h-[80vh] flex-col justify-center lg:w-[25%] w-[80%] mx-auto  gap-5">
                 <div className="flex flex-col">
                     <p className="text-[28px] font-[600] text-[#00ED64]">

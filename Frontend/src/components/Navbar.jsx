@@ -7,7 +7,6 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoLogoGithub } from "react-icons/io";
-import { setIsDialogOpen } from "../slices/UserSlice";
 
 const Navbar = () => {
     const dispatch = useDispatch();
@@ -29,7 +28,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className={darkMode ? "bg-[#001E2B]" : "bg-[#FFFFFF]"}>
+        <div>
             <nav className="flex w-[90%] md:w-[80%] lg:w-9/12 h-[6vh] lg:h-[11vh] md:h-[8vh] mx-auto py-4 items-center justify-between">
                 <Link to={"/"}>
                     <h1

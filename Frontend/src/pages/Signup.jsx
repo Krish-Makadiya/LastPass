@@ -59,16 +59,13 @@ const Signup = () => {
     };
 
     return (
-        <div className={`w-full ${darkMode ? "bg-[#001E2B]" : "bg-[#FFFFFF]"}`}>
+        <div className={`w-full`}>
             {loading ? (
                 <Loader />
             ) : (
                 <div
                     className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center gap-6`}>
-                    <h1
-                        className={`text-[36px] font-[600] ${
-                            darkMode ? "text-white" : "text-black"
-                        }`}>
+                    <h1 className={`text-[36px] font-[600]`}>
                         Your <span className="text-[#00ED64]">Privacy</span>{" "}
                         Starts <span className="text-[#00ED64]">Here.</span>
                     </h1>
@@ -80,9 +77,7 @@ const Signup = () => {
                             <div className="flex flex-col gap-1 w-[48%]">
                                 <label
                                     htmlFor="firstName"
-                                    className={`text-[16px] ${
-                                        darkMode ? "text-white" : "text-black"
-                                    } select-none`}>
+                                    className={`text-[16px] select-none`}>
                                     First Name
                                 </label>
                                 <input
@@ -99,9 +94,7 @@ const Signup = () => {
                             <div className="flex flex-col gap-1 w-[48%]">
                                 <label
                                     htmlFor="lastName"
-                                    className={`text-[16px] ${
-                                        darkMode ? "text-white" : "text-black"
-                                    } select-none`}>
+                                    className={`text-[16px] select-none`}>
                                     Last Name
                                 </label>
                                 <input
@@ -119,9 +112,7 @@ const Signup = () => {
                         <div className="flex flex-col gap-1">
                             <label
                                 htmlFor="email"
-                                className={`text-[16px] ${
-                                    darkMode ? "text-white" : "text-black"
-                                } select-none`}>
+                                className={`text-[16px] select-none`}>
                                 Email Address
                             </label>
                             <input
@@ -138,9 +129,7 @@ const Signup = () => {
                         <div className="flex flex-col gap-1">
                             <label
                                 htmlFor="password"
-                                className={`text-[16px] ${
-                                    darkMode ? "text-white" : "text-black"
-                                } select-none`}>
+                                className={`text-[16px] select-none`}>
                                 Password
                             </label>
                             <div className="flex items-center gap-3 w-full">
@@ -161,20 +150,12 @@ const Signup = () => {
                                     {showPassword ? (
                                         <BiSolidHide
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     ) : (
                                         <BiSolidShow
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     )}
                                 </div>
@@ -212,20 +193,12 @@ const Signup = () => {
                                     {showConfirmPassword ? (
                                         <BiSolidHide
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     ) : (
                                         <BiSolidShow
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     )}
                                 </div>
@@ -240,9 +213,7 @@ const Signup = () => {
                             </button>
                             <Link
                                 to="/login"
-                                className={`flex w-[60%] text-center gap-3 items-center transition-all duration-200 hover:scale-95 ${
-                                    darkMode ? "text-white" : "text-black"
-                                }`}>
+                                className={`flex w-[60%] text-center gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                 <FaArrowLeft size={22} />
                                 <p className="text-[16px] select-none">
                                     Already Have an Account

@@ -58,17 +58,14 @@ const Login = () => {
     };
 
     return (
-        <div className={`w-full ${darkMode ? "bg-[#001E2B]" : "bg-[#FFFFFF]"}`}>
+        <div>
             {loading ? (
                 <Loader />
             ) : (
                 <div
                     className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center gap-6`}>
                     <div>
-                        <h1
-                            className={`text-[36px] font-[600] ${
-                                darkMode ? "text-white" : "text-black"
-                            }`}>
+                        <h1 className={`text-[36px] font-[600]`}>
                             Your <span className="text-[#00ED64]">Privacy</span>
                             , Our{" "}
                             <span className="text-[#00ED64]">Priority</span>
@@ -81,9 +78,7 @@ const Login = () => {
                         <div className="flex flex-col gap-1">
                             <label
                                 htmlFor="email"
-                                className={`text-[16px] ${
-                                    darkMode ? "text-white" : "text-black"
-                                } select-none`}>
+                                className={`text-[16px] select-none`}>
                                 Email Address
                             </label>
                             <input
@@ -101,9 +96,7 @@ const Login = () => {
                         <div className="flex flex-col gap-1">
                             <label
                                 htmlFor="password"
-                                className={`text-[16px] ${
-                                    darkMode ? "text-white" : "text-black"
-                                } select-none`}>
+                                className={`text-[16px] select-none`}>
                                 Password
                             </label>
                             <div className="flex items-center gap-3 w-full">
@@ -125,20 +118,12 @@ const Login = () => {
                                     {showPassword ? (
                                         <BiSolidHide
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     ) : (
                                         <BiSolidShow
                                             fontSize={30}
-                                            className={`transition-all duration-200 hover:scale-95 ${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
+                                            className={`transition-all duration-200 hover:scale-95`}
                                         />
                                     )}
                                 </div>
@@ -154,9 +139,7 @@ const Login = () => {
                             <div className="flex justify-between">
                                 <Link
                                     to="/signup"
-                                    className={`flex gap-3 items-center transition-all duration-200 hover:scale-95 ${
-                                        darkMode ? "text-white" : "text-black"
-                                    }`}>
+                                    className={`flex gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                     <FaArrowLeft size={22} />
                                     <p className="text-[16px] select-none">
                                         Create Account
@@ -164,9 +147,7 @@ const Login = () => {
                                 </Link>
                                 <Link
                                     to="/verify-email"
-                                    className={`flex gap-3 items-center transition-all duration-200 hover:scale-95 ${
-                                        darkMode ? "text-white" : "text-black"
-                                    }`}>
+                                    className={`flex gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                     <p className="text-[16px] select-none">
                                         Forgot Password
                                     </p>

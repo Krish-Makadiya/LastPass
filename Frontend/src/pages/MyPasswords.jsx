@@ -106,10 +106,7 @@ const MyPasswords = () => {
     return !isLoggedIn ? (
         <HomePage />
     ) : (
-        <div
-            className={`w-full min-h-[89%] ${
-                darkMode ? "bg-[#001E2B]" : "bg-[#FFFFFF]"
-            }`}>
+        <div className={`w-full min-h-[89%]`}>
             {loading ? (
                 <Loader />
             ) : (
@@ -166,23 +163,9 @@ const MyPasswords = () => {
                                         setShowPassword(!showPassword)
                                     }>
                                     {showPassword ? (
-                                        <BiSolidHide
-                                            fontSize={30}
-                                            className={`${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
-                                        />
+                                        <BiSolidHide fontSize={30} />
                                     ) : (
-                                        <BiSolidShow
-                                            fontSize={30}
-                                            className={`${
-                                                darkMode
-                                                    ? "text-white"
-                                                    : "text-black"
-                                            }`}
-                                        />
+                                        <BiSolidShow fontSize={30} />
                                     )}
                                 </div>
                             </div>

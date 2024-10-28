@@ -14,9 +14,7 @@ import ErrorPage from "./pages/ErrorPage";
 import React from "react";
 
 function App() {
-    const loading = useSelector((state) => state.user.loading);
     const location = useLocation();
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const darkMode = useSelector((state) => state.user.darkMode);
     const token = useSelector((state) => state.user.token);
@@ -35,7 +33,7 @@ function App() {
     return (
         <div
             className={`${
-                darkMode ? "bg-[#001E2B] text-white" : "bg-white text-black"
+                darkMode ? "bg-[#001E2B] text-white" : "bg-[#F8F8FF] text-black"
             } h-[100vh] font-[poppins]`}>
             <Navbar />
 

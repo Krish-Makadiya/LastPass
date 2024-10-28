@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";

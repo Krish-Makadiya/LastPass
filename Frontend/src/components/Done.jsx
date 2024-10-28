@@ -22,10 +22,13 @@ const Done = () => {
                 </p>
                 <Player ref={playerRef} size={200} icon={ICON} />
                 <p className="text-center">
-                    Your password has been <span className="text-[#00ED64]">Updated!</span> <br /> You can now use it to
-                    access your accounts.
+                    Your password has been{" "}
+                    <span className="text-[#00ED64]">Updated!</span> <br /> You
+                    can now use it to access your accounts.
                 </p>
-                <Link to="/login" className="bg-[#00ED64] px-5 py-3 rounded-md font-[600] flex items-center justify-center gap-2 transition-all duration-200 hover:scale-95 mt-1 text-black">
+                <Link
+                    to="/login"
+                    className="bg-[#00ED64] px-5 py-3 rounded-md font-[600] flex items-center justify-center gap-2 transition-all duration-200 hover:scale-95 mt-1 text-black">
                     <p>Login Account</p>
                     <FaArrowRight />
                 </Link>

@@ -37,7 +37,7 @@ const VerifyEmail = () => {
                 }
             );
             toast.success("Email sent. Check your inbox.");
-            
+
             dispatch(setToken(null));
             localStorage.removeItem("token");
             navigate("/login");
@@ -48,10 +48,7 @@ const VerifyEmail = () => {
     };
 
     return (
-        <div
-            className={`${
-                darkMode ? "text-white" : "text-black"
-            } w-full h-[89%]`}>
+        <div className={`w-full h-[89%]`}>
             {loading ? (
                 <Loader />
             ) : (
@@ -89,9 +86,7 @@ const VerifyEmail = () => {
                         </button>
                         <Link
                             to={token ? "/settings" : "/login"}
-                            className={`flex gap-2 items-center ${
-                                darkMode ? "text-white" : "text-black"
-                            }`}>
+                            className={`flex gap-2 items-center`}>
                             <FaArrowLeft size={18} />
                             <p className="text-[16px] select-none">Back</p>
                         </Link>
