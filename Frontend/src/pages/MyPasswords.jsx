@@ -124,7 +124,7 @@ const MyPasswords = () => {
                                 value={linkName}
                                 name="linkName"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[29%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] border-[3px] ${
+                                className={`text-black bg-gray-100 w-[29%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -134,7 +134,7 @@ const MyPasswords = () => {
                                 value={linkUrl}
                                 name="linkUrl"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[69%]  lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] border-[3px] ${
+                                className={`text-black bg-gray-100 w-[69%]  lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -146,7 +146,7 @@ const MyPasswords = () => {
                                 value={username}
                                 name="username"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[49%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] border-[3px] ${
+                                className={`text-black bg-gray-100 w-[49%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -157,7 +157,7 @@ const MyPasswords = () => {
                                     value={password}
                                     name="password"
                                     onChange={changeHandler}
-                                    className={`text-black bg-gray-100 w-[90%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] border-[3px] ${
+                                    className={`text-black bg-gray-100 w-[90%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
                                         darkMode ? "" : "border-gray-300"
                                     }`}
                                 />
