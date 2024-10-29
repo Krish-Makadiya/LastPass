@@ -110,7 +110,7 @@ const MyPasswords = () => {
             {loading ? (
                 <Loader />
             ) : (
-                <div className="h-full">
+                <div className={`h-full ${darkMode?"bg-[#001E2B]":"bg-white"}`}>
                     <form
                         onSubmit={submitHandler}
                         className="lg:w-[60%] w-[90%] mx-auto py-6 flex flex-col gap-3 items-center">
