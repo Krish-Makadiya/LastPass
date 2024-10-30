@@ -121,7 +121,7 @@ const MyPasswords = () => {
                                 value={linkName}
                                 name="linkName"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[29%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
+                                className={`text-black bg-gray-100 w-[29%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md lg:text-[16px] text-[14px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -131,7 +131,7 @@ const MyPasswords = () => {
                                 value={linkUrl}
                                 name="linkUrl"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[69%]  lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
+                                className={`text-black bg-gray-100 w-[69%]  lg:px-3 lg:py-[6px] px-2 py-1 rounded-md lg:text-[16px] text-[14px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -143,7 +143,7 @@ const MyPasswords = () => {
                                 value={username}
                                 name="username"
                                 onChange={changeHandler}
-                                className={`text-black bg-gray-100 w-[49%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
+                                className={`text-black bg-gray-100 w-[49%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md lg:text-[16px] text-[14px] lg:border-[3px] border-[2px] ${
                                     !darkMode && "border-gray-300"
                                 }`}
                             />
@@ -154,7 +154,7 @@ const MyPasswords = () => {
                                     value={password}
                                     name="password"
                                     onChange={changeHandler}
-                                    className={`text-black bg-gray-100 w-[90%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md text-[16px] lg:border-[3px] border-[2px] ${
+                                    className={`text-black bg-gray-100 w-[90%] lg:px-3 lg:py-[6px] px-2 py-1 rounded-md lg:text-[16px] text-[14px] lg:border-[3px] border-[2px] ${
                                         darkMode ? "" : "border-gray-300"
                                     }`}
                                 />
@@ -173,7 +173,7 @@ const MyPasswords = () => {
 
                         <button
                             type="submit"
-                            className={`text-black font-[600] text-[14px] bg-[#00ED64] lg;px-3 lg;py-3 px-2 py-2 rounded-md flex items-center justify-center lg:gap-3 gap-2 select-none transition-all duration-200 hover:scale-95`}>
+                            className={`text-black font-[600] lg:text-[16px] text-[14px] bg-[#00ED64] lg;px-3 lg;py-3 px-2 py-2 rounded-md flex items-center justify-center lg:gap-3 gap-2 select-none transition-all duration-200 hover:scale-95`}>
                             <p>Add Password</p>
                             <IoIosAddCircle fontSize={24} />
                         </button>
