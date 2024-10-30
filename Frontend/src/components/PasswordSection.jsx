@@ -125,7 +125,7 @@ const PasswordSection = ({ passwords, setData, setAllPasswords }) => {
                             />
                         </div>
                         {deletePasswordDialog && (
-                            <div className="fixed top-0 left-0 z-50 w-full h-full bg-[rgba(0,0,0,0.50)]">
+                            <div className="fixed top-0 left-0 z-50 w-full h-full bg-[rgba(0,0,0,0.2)]">
                                 <div className="flex flex-col justify-center items-center w-full h-full">
                                     <div
                                         className={`px-6 py-4 lg:w-[500px] w-[90%] rounded-[10px] border-[2px] border-gray-600 flex flex-col gap-5 ${
