@@ -141,14 +141,14 @@ const Login = () => {
                                     to="/signup"
                                     className={`flex gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                     <FaArrowLeft size={22} />
-                                    <p className="text-[16px] select-none">
+                                    <p className="lg:text-[16px] text-[14px] select-none">
                                         Create Account
                                     </p>
                                 </Link>
                                 <Link
                                     to="/verify-email"
                                     className={`flex gap-3 items-center transition-all duration-200 hover:scale-95`}>
-                                    <p className="text-[16px] select-none">
+                                    <p className="lg:text-[16px] text-[14px] select-none">
                                         Forgot Password
                                     </p>
                                 </Link>

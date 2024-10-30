@@ -215,7 +215,7 @@ const Signup = () => {
                                 to="/login"
                                 className={`flex w-[60%] text-center gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                 <FaArrowLeft size={22} />
-                                <p className="text-[16px] select-none">
+                                <p className="lg:text-[16px] text-[14px] select-none">
                                     Already Have an Account
                                 </p>
                             </Link>
