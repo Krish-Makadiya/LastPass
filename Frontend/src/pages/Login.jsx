@@ -63,9 +63,9 @@ const Login = () => {
                 <Loader />
             ) : (
                 <div
-                    className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center gap-6`}>
+                    className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center lg:gap-6 gap-4`}>
                     <div>
-                        <h1 className={`text-[36px] font-[600]`}>
+                        <h1 className={`lg:text-[36px] text-[30px] font-[600]`}>
                             Your <span className="text-[#00ED64]">Privacy</span>
                             , Our{" "}
                             <span className="text-[#00ED64]">Priority</span>
@@ -74,7 +74,7 @@ const Login = () => {
 
                     <form
                         onSubmit={submitHandler}
-                        className="flex flex-col gap-5">
+                        className="flex flex-col lg:gap-5 gap-3">
                         <div className="flex flex-col gap-1">
                             <label
                                 htmlFor="email"
@@ -129,7 +129,7 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col mt-5 gap-5">
+                        <div className="flex flex-col mt-5 lg:gap-5 gap-3">
                             <button
                                 type="submit"
                                 className={`text-black font-[600] text-[18px] bg-[#00ED64] px-3 py-3 rounded-md flex items-center justify-center gap-3 select-none transition-all duration-200 hover:scale-95`}>

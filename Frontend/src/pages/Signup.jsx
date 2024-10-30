@@ -64,15 +64,15 @@ const Signup = () => {
                 <Loader />
             ) : (
                 <div
-                    className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center gap-6`}>
-                    <h1 className={`text-[36px] font-[600]`}>
+                    className={`h-[89vh] lg:w-[30%] md:w-[60%] w-[85%] mx-auto flex flex-col justify-center lg:gap-6 gap-4`}>
+                    <h1 className={`lg:text-[36px] text-[30px] font-[600]`}>
                         Your <span className="text-[#00ED64]">Privacy</span>{" "}
                         Starts <span className="text-[#00ED64]">Here.</span>
                     </h1>
 
                     <form
                         onSubmit={submitHandler}
-                        className="flex flex-col gap-5">
+                        className="flex flex-col lg:gap-5 gap-3">
                         <div className="flex w-full gap-4 justify-between">
                             <div className="flex flex-col gap-1 w-[48%]">
                                 <label
@@ -213,7 +213,7 @@ const Signup = () => {
                             </button>
                             <Link
                                 to="/login"
-                                className={`flex w-[60%] text-center gap-3 items-center transition-all duration-200 hover:scale-95`}>
+                                className={`flex text-center gap-3 items-center transition-all duration-200 hover:scale-95`}>
                                 <FaArrowLeft size={22} />
                                 <p className="lg:text-[16px] text-[14px] select-none">
                                     Already Have an Account
