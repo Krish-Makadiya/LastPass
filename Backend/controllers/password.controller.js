@@ -1,5 +1,26 @@
 const Password = require("../models/Password.model");
 const User = require("../models/User.model");
+const crypto = require("crypto");
+
+const secretKey = Buffer.from(process.env.CRYPTO_SECRET, "hex");
+const ivLength = 16;
+
+function encryptPassword(password) {
+    const iv = crypto.randomBytes(ivLength);
+    const cipher = crypto.createCipheriv("aes-256-cbc", secretKey, iv);
+    let encrypted = cipher.update(password, "utf8", "hex");
+    encrypted += cipher.final("hex");
+    return `${iv.toString("hex")}:${encrypted}`;
+}
+
+function decryptPassword(encryptedPassword) {
+    const [ivHex, encrypted] = encryptedPassword.split(":");
+    const iv = Buffer.from(ivHex, "hex");
+    const decipher = crypto.createDecipheriv("aes-256-cbc", secretKey, iv);
+    let decrypted = decipher.update(encrypted, "hex", "utf8");
+    decrypted += decipher.final("utf8");
+    return decrypted;
+}
 
 exports.addPassword = async (req, res) => {
     try {
@@ -12,12 +33,14 @@ exports.addPassword = async (req, res) => {
                 message: "Please provide all required fields",
             });
         }
-    
+
+        const encryptedPassword = encryptPassword(password);
+
         const newPassword = await Password.create({
             linkName,
             linkUrl,
             username,
-            password,
+            password: encryptedPassword,
         });
 
         await User.findByIdAndUpdate(
@@ -33,7 +56,7 @@ exports.addPassword = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "password added successfully",
+            message: "Password added successfully",
             data: newPassword,
         });
     } catch (error) {
@@ -90,14 +113,11 @@ exports.editPassword = async (req, res) => {
 
 exports.deletePassword = async (req, res) => {
     try {
-        // Get the password from the body
         const { passwordId } = req.body;
         const userId = req.user._id;
 
-        // Delete the password
         const response = await Password.findByIdAndDelete(passwordId);
 
-        // Remove the password from the user's savedPasswords list
         const user = await User.findByIdAndUpdate(
             userId,
             {
@@ -106,7 +126,6 @@ exports.deletePassword = async (req, res) => {
             { new: true }
         );
 
-        // return the saved password
         return res.status(200).json({
             success: true,
             message: "password deleted successfully",
@@ -137,9 +156,25 @@ exports.getAllPasswords = async (req, res) => {
             .populate("savedPasswords")
             .exec();
 
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found",
+            });
+        }
+
+        const decryptedPasswords = user[0].savedPasswords.map(
+            (passwordDoc) => ({
+                linkName: passwordDoc.linkName,
+                linkUrl: passwordDoc.linkUrl,
+                username: passwordDoc.username,
+                password: decryptPassword(passwordDoc.password),
+            })
+        );
+
         return res.status(200).json({
             success: true,
-            data: user,
+            data: decryptedPasswords,
         });
     } catch (error) {
         return res.status(500).json({

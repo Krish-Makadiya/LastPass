@@ -10,7 +10,6 @@ exports.signup = async (req, res) => {
         const { firstName, lastName, email, password, confirmPassword } =
             req.body;
 
-        // validating input
         if (
             !firstName ||
             !lastName ||
@@ -23,14 +22,12 @@ exports.signup = async (req, res) => {
                 .json({ success: false, message: "All fields are required" });
         }
 
-        // Check if email is valid
         if (!validator.isEmail(email)) {
             return res
                 .status(400)
                 .json({ success: false, message: "Invalid email format" });
         }
 
-        // check if password has 8 valid characters and not empty
         if (password.length < 8) {
             return res.status(400).json({
                 success: false,
@@ -38,14 +35,12 @@ exports.signup = async (req, res) => {
             });
         }
 
-        // check if confirmPassword matches password
         if (password !== confirmPassword) {
             return res
                 .status(400)
                 .json({ success: false, message: "Passwords do not match" });
         }
 
-        // check if email already exists in the database
         const isEmailPresent = await User.findOne({ email: email });
         if (isEmailPresent) {
             return res
@@ -53,10 +48,9 @@ exports.signup = async (req, res) => {
                 .json({ success: false, message: "Email already exists" });
         }
 
-        // hash the password before storing it in the database
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // create a new user instance and save it to the database
+        
         const user = await User.create({
             firstName,
             lastName,
@@ -79,24 +73,24 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        // validate input
+        
         const { email, password } = req.body;
 
-        // check if email and password are provided
+        
         if (!email || !password) {
             return res
                 .status(400)
                 .json({ success: false, message: "All fields are required" });
         }
 
-        // check if email is valid
+        
         if (!validator.isEmail(email)) {
             return res
                 .status(400)
                 .json({ success: false, message: "Invalid email format" });
         }
 
-        // check if user exists in the database and if the password matches
+        
         const user = await User.findOne({ email: email });
         if (!user) {
             return res
@@ -104,7 +98,7 @@ exports.login = async (req, res) => {
                 .json({ success: false, message: "User not found" });
         }
 
-        // compare the hashed password with the stored password in the database
+        
         const hashedPassword = await bcrypt.compare(password, user.password);
         if (!hashedPassword) {
             return res
@@ -112,18 +106,18 @@ exports.login = async (req, res) => {
                 .json({ success: false, message: "Invalid password" });
         }
 
-        // generate a JWT token for the user
+        
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
             expiresIn: "24h",
         });
         user.token = token;
-        // user.password = undefined;
+        
 
         const options = {
             expiresIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         };
 
-        // return the JWT token to the user
+        
         return res.status(200).cookie("token", token, options).json({
             success: true,
             message: "Logged in successfully",
@@ -255,8 +249,8 @@ exports.resetPassword = async (req, res) => {
             { token },
             {
                 password: hashedPassword,
-                // token: null,
-                // resetPasswordExpires: null,
+                
+                
             },
             { new: true }
         );
@@ -286,7 +280,6 @@ exports.deleteAccount = async (req, res) => {
             });
         }
 
-        // Return a success response
         return res.status(200).json({
             success: true,
             message: "Account deleted successfully",

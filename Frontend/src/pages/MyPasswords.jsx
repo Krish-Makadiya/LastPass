@@ -83,7 +83,7 @@ const MyPasswords = () => {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            setAllPasswords(response.data.data[0].savedPasswords);
+            setAllPasswords(response.data.data);
         } catch (error) {
             console.error("Error fetching passwords:", error);
         }
@@ -110,7 +110,10 @@ const MyPasswords = () => {
             {loading ? (
                 <Loader />
             ) : (
-                <div className={`h-full ${darkMode?"bg-[#001E2B]":"bg-white"}`}>
+                <div
+                    className={`h-full ${
+                        darkMode ? "bg-[#001E2B]" : "bg-white"
+                    }`}>
                     <form
                         onSubmit={submitHandler}
                         className="lg:w-[60%] w-[90%] mx-auto py-6 flex flex-col gap-3 items-center">
