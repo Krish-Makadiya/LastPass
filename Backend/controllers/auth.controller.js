@@ -1,6 +1,7 @@
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const User = require("../models/User.model");
+const Password = require("../models/Password.model");
 const jwt = require("jsonwebtoken");
 const { nodeMailer } = require("../config/nodeMailer");
 const crypto = require("crypto");
@@ -271,6 +272,8 @@ exports.resetPassword = async (req, res) => {
 exports.deleteAccount = async (req, res) => {
     try {
         const userId = req.user.id;
+
+        await Password.deleteMany({ userId });
         const deletedUser = await User.findByIdAndDelete(userId);
 
         if (!deletedUser) {

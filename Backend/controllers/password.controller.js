@@ -37,6 +37,7 @@ exports.addPassword = async (req, res) => {
         const encryptedPassword = encryptPassword(password);
 
         const newPassword = await Password.create({
+            userId,
             linkName,
             linkUrl,
             username,

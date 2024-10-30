@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const schema = new mongoose.Schema(
     {
+        userId: {
+            type: String,
+            required: true,
+        },
         linkName: {
             type: String,
             required: true,
