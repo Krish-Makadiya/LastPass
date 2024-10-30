@@ -66,7 +66,7 @@ exports.signup = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "User created successfully",
+            message: "Signed Up successfully. Please Login",
             data: user,
         });
     } catch (error) {
