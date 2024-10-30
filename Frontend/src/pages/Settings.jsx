@@ -68,7 +68,10 @@ const Settings = () => {
     return loading ? (
         <Loader />
     ) : (
-        <div className={`w-full min-h-[89%] lg:pb-10 pb-6`}>
+        <div
+            className={`w-full min-h-[89%] lg:pb-10 pb-6 ${
+                darkMode ? "bg-[#001E2B]" : "bg-white"
+            }`}>
             <div className="flex  lg:w-[60%] w-[90%] mx-auto flex-col gap-5">
                 <h1 className="text-[30px] font-[600] pt-6">Settings</h1>
 
