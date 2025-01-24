@@ -101,11 +101,7 @@ Feel free to fork the repository and submit pull requests for enhancements or bu
 
 ---
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
 
 ## Contact
-For any queries or feedback, reach out to **Jeevan Arvind Shewale**.
+For any queries or feedback, reach out to **Krish Makadiya | krishmakadiya2005@gmail.com**.
 
